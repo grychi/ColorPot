@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<!--therealgary@github-->
+<html>
+
+<head>
+  <title>ColorPot</title>
+  <link href="css/stylesheet.css" type="text/css" rel="stylesheet">
+  <link href="css/testing.css" type="text/css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script> if (typeof module === 'object') { window.module = module; module = undefined; } </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js?ver=1.11.1"></script>
+  <script type="text/javascript" src="js/indexVanilla.js"></script>
+  <script type="text/javascript" src="js/indexJQuery.js"></script>
+  <script type="text/javascript" src="js/w3color.js"></script>
+  <script> if (window.module) module = window.module; </script>
+</head>
+
+<body onresize="totalResize(true)">
+  <style id="jsAddStyle"></style>
+
+  <div id="side">
+    <div id="abt" class="rotate">
+      <h1>About</h1>
+    </div>
+    <div id="opt" class="rotate">
+      <h1>Options</h1>
+    </div>
+  </div>
+
+  <div id="actual">
+    <div id="pick" class="mPanel panA transform-panel-transition">
+      <h1 class="transform-panel">Your Pick
+        <i class="material-icons" onclick="setUI(randomColor())">loop</i>
+        <i id="pickMI" class="material-icons">swap_vert</i>
+      </h1>
+      <div id="pickers">
+        <div id="boxPicker">
+          <div id="pickCircle"> </div>
+        </div>
+        <div id="colorMap">
+        </div>
+      </div>
+    </div>
+
+    <div id="adj" class="mPanel panB transform-panel-transition">
+      <h1 class="transform-panel">Adjustments
+        <i id="adjMI" class="material-icons">expand_more</i>
+      </h1>
+      <div id="adjWrap">
+        <div class="adjColors">
+          <div class="adjC" style="background-color: #CE93D8"></div>
+          <div class="adjC" style="background-color: #BA68C8"></div>
+          <div class="adjC" style="background-color: #AB47BC"></div>
+          <div class="adjC" style="background-color: #9C27B0"></div>
+        </div>
+        <div class="adjColors"></div>
+        <div class="adjColors"></div>
+        <div class="adjColors"></div>
+        <span id="adjStretch"></span>
+      </div>
+    </div>
+
+    <div id="pal" class="mPanel panA transform-panel-transition">
+      <h1 class="transform-panel">Palettes
+        <i id="palMI" class="material-icons">expand_more</i>
+      </h1>
+      <div id="palWrap">
+        <div class="aPal">
+          <div class="palC" style="width: 20%; background-color: red"></div>
+          <div class="palC" style="width: 20%; background-color: mediumvioletred"></div>
+          <div class="palC" style="width: 20%; background-color: indianred"></div>
+          <div class="palC" style="width: 20%; background-color: palevioletred"></div>
+          <div class="palC" style="width: 20%; background-color: orangered"></div>
+        </div>
+        <div class="aPal">
+          <div class="palC" style="width: 25%; background-color: #e91e63"></div>
+          <div class="palC" style="width: 25%; background-color: #9c27b0"></div>
+          <div class="palC" style="width: 25%; background-color: #673ab7"></div>
+          <div class="palC" style="width: 25%; background-color: #3f51b5"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="har" class="mPanel panB transform-panel-transition">
+      <h1 class="transform-panel">Harmonies
+        <i class="material-icons">add_circle</i>
+      </h1>
+
+      <div id="harBox">
+        <div id="colorWheel"></div>
+        <div id="colorCenter"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="results">
+    <div id="colors">
+      <h1>Colors
+        <i id="resMI" class="material-icons">view_stream</i>
+        <i class="material-icons">undo</i>
+      </h1>
+      <div id="showing"> </div>
+    </div>
+    <div id="enterText">
+      <textarea id="colorText" name="" onkeyup="getColors(event)" spellcheck="false" placeholder="Paste colors here"></textarea>
+    </div>
+  </div>
+
+  <div id="slideAbt" class="slideIn transform-slideIn-transition">
+    <h1>About
+      <i class="material-icons closeSlideIn">clear</i>
+    </h1>
+    <div class="slideCont">
+      <!--TODO fix icon-->
+      <div style="background-image: url(icons/ico.png); background-size: cover; height: 4em; width: 4em;"></div>
+      <b style="font-size: 1.8em">ColorPot</b> Version: 1.0<br>
+      <a href="#">Check for updates</a><br> An elegant and easy-to-use color tool for UI designers, digital artists, front-end web developers,
+      material design enthusiasts, and anyone who wants to play with colors.<br> Have any suggestions? <a href="#">Provide feedback here</a>.<br>
+      <a href="https://github.com/therealgary/" target="_blank">therealgary@github</a><br>
+      <span style="font-size: .8em;">
+        License: <a href="#">GNU GPLv3</a><br style="font-size: 1em;">
+        <a href="#">Terms of Use</a><br>
+      </span>
+    </div>
+  </div>
+  <div id="slideOpt" class="slideIn transform-slideIn-transition">
+    <h1>Options
+      <i class="material-icons closeSlideIn">clear</i>
+    </h1>
+    <div class="slideCont">
+      <b style="font-size:1.2em">General</b><br> Resolution <br> Color format <br> UI color <br> When to update <br>
+      <b style="font-size:1.2em">Advanced</b><br> Refresh colors from input interval <br> Use cookies to save colors <br>
+      <b style="font-size:1.2em">Account</b><br> Cloud sync data <br> Update password <br> Log out <br>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<!--
+<i class="material-icons">warning</i>
+<i class="material-icons">add_circle_outline</i>
+<i class="material-icons">bubble_chart</i>
+-->

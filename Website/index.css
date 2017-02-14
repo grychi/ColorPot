@@ -1,0 +1,104 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #F2F2F2;
+}
+#colorPot {
+    position: fixed;
+    top: 1em;
+    left: 2em;
+    font-size: 2em;
+    font-weight: bold;
+}
+#cpIcon {
+    background-image: url(48.png);
+    background-size: cover;
+    height: 1.5em;
+    width: 1.5em;
+    display: inline-block;
+    position: relative;
+    top: .25em;
+}
+#mainContent {
+    position: relative;
+    text-align: center;
+    top: 30vh;
+    transform: translateY(-30%);
+    width: 100%;
+}
+#presenting {
+    background-color: rgba(158, 158, 158, 0.10);
+    height: 36vw;
+    width: 64vw;
+    max-height: 45vh;
+    max-width: 80vh;
+    margin: auto;
+    box-shadow: 0 4px 8px -0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+#leftArr {
+    float: left;
+    margin-left: -4em;
+}
+#rightArr {
+    float: right;
+    margin-right: -4em;
+}
+.arrow {
+    line-height: 1.8;
+    text-align: center;
+    height: 2em;
+    width: 2em;
+    background-color: transparent;
+    margin-top: 25%;
+    border-radius: 2em;
+}
+.arrow:hover {
+    background-color: rgba(158, 158, 158, 0.50);
+    color: white;
+    cursor: pointer;
+}
+#download {
+    position: relative;
+    height: 4em;
+    width: 12em;
+    background-color: #7C4DFF;
+    margin: auto;
+    bottom: calc(-100% + 2em);
+    border-radius: 1em;
+    font-weight: bold;
+    line-height: 4em;
+    color: white;
+    opacity: .8;
+}
+#download:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+#theFoot {
+    position: fixed;
+    width: calc(100% - 2em);
+    bottom: 0;
+    text-align: right;
+    background-color:rgba(158, 158, 158, 0.25);
+    padding: 1em;
+    font-size: 1.2em;
+}
+#footText {
+    display: inline-block;
+    padding-right: 1em;
+    font-size: .85em;
+}
+.footItem {
+    display: inline-block;
+    padding-right: 1em;
+}
+.footItem a {
+    text-decoration: none;
+    color: black;
+}
+.footItem a:hover {
+    /*color: #0370EA;*/
+    color: #9C27B0;
+    cursor: pointer;
+}

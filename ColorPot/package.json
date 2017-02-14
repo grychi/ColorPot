@@ -1,0 +1,23 @@
+{
+  "name": "colorpot",
+  "version": "1.0.0",
+  "description": "Picking colors made easy",
+  "main": "main.js",
+  "repository": "",
+  "keywords": [
+    "Colors",
+    "Material",
+    "Design"
+  ],
+  "author": "gbeargary",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^1.4.1"
+  },
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=icons/icon.ico --prune=true --out=release-builds",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=icons/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CP --version-string.FileDescription=CP --version-string.ProductName=\"ColorPot\"",
+    "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=icons/icon.ico --prune=true --out=release-builds"
+  }
+}

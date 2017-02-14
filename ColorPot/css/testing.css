@@ -1,0 +1,27 @@
+/* PICKER & HARMONIES*/
+
+#pickers, #harBox {
+    position: relative;
+    margin: auto;
+    height: calc(100% - 8em);
+    width: 50%;
+    min-width: 14em;
+    margin-top: 1.5em;
+}
+
+/* PALETTE */
+
+.palC {
+    cursor: pointer;
+    float: left;
+    height: 4em;
+}
+
+/* TEXT */
+
+input,textarea {
+    border-bottom-color: rgba(103, 58, 183, .4);
+}
+input:focus,textarea:focus {
+    border-bottom-color: rebeccapurple;
+}
