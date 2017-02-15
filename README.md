@@ -1,11 +1,13 @@
-STATUS (as of Feb 13, 2017)
-    Basic UI layout done. Needs work on functionality.
+STATUS (as of Feb 14, 2017)
+    User interface layout almost complete, main work left is functionality.
     Since this project just started, there are plenty of easy stuff to do!
-    Especially if you know HTML/CSS/JS
+    (Especially if you know HTML/CSS/JS)
 
 Website:
-- basic website showing features
+- basic website
+- slideshow to present features
 - download counter
+- about, releases, terms and privacy pages
 Key functionality: 
 - html color picker (box and hexagon)
 - adjustments: tones brightness(tints shades) hues saturation
