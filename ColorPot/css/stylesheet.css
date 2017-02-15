@@ -313,7 +313,7 @@ input:focus,textarea:focus {
     height: 100%;
     width: calc(99% - 18em + 2px);
     top: 0;
-    left: calc(-99% + 18em);
+    left: calc(-99% + 18em - 2px);
     background-color: #F2F2F2;
 }
 .slideCont {
