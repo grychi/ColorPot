@@ -22,62 +22,13 @@ var materialColors = ["#f44336",
 
 document.addEventListener("DOMContentLoaded", function () {
     loadFromCookies();
-    totalResize();
     setUI(randomColor());
     window.clearTimeout(upColors);
+    document.getElementById("boxPicker").addEventListener('mousedown', boxMD, false);
 });
 
 function loadFromCookies() {
     return;
-}
-
-function totalResize(wait = false) {
-    boxPickResize();
-    boxPalResize();
-    //TODO: Temporary fix here
-    if (wait) {
-        window.clearTimeout(upColors);
-        upColors = setTimeout(totalResize, 801);
-    }
-}
-//TODO: improve resize function
-function boxPickResize() {
-    var boxPick = document.getElementById("boxPicker");
-    boxPick.style.height = "100%";
-    var boxPickH = boxPick.clientHeight;
-
-    var allPick = document.getElementById("pickers");
-    var pickerW = allPick.clientWidth;
-
-    if (boxPickH < pickerW) {
-        boxPick.style.width = boxPickH + "px";
-    }
-    else {
-        boxPick.style.width = pickerW + "px";
-        boxPick.style.height = pickerW + "px";
-    }
-}
-function boxPalResize() {
-    var colWheel = document.getElementById("colorWheel");
-    colWheel.style.height = "90%";
-    var colWheelH = colWheel.clientHeight;
-    var colCenter = document.getElementById("colorCenter");
-    colCenter.style.height = "60%";
-    var colCenterH = colCenter.clientHeight;
-
-    var palWrap = document.getElementById("harBox");
-    var palW = palWrap.clientWidth;
-
-    if (colWheelH < palW) {
-        colWheel.style.width = colWheelH + "px";
-        colCenter.style.width = colCenter.clientHeight + "px";
-    }
-    else {
-        colWheel.style.width = palW + "px";
-        colWheel.style.height = palW + "px";
-        colCenter.style.width = (palW * .6) + "px";
-        colCenter.style.height = (palW * .6) + "px";
-    }
 }
 
 function getColors(e) {
@@ -127,7 +78,6 @@ function setUI(theColor) {
     for (var i = 0; i < links.length; i++) {
         links[i].style.color = theColor;
     }
-    document.getElementById("boxPicker").addEventListener('mousedown', boxMD, false);
 }
 function colorClick() {
     setUI(this.style.backgroundColor);

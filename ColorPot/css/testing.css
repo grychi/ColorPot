@@ -1,20 +1,16 @@
-/* PICKER & HARMONIES*/
+/* PICKER */
 
-#pickers, #harBox {
-    position: relative;
-    margin: auto;
-    height: calc(100% - 8em);
-    width: 50%;
-    min-width: 14em;
-    margin-top: 1.5em;
+#mapView {
+    height: 100%;
+    width: 100%;
 }
-
-/* PALETTE */
-
-.palC {
-    cursor: pointer;
-    float: left;
-    height: 4em;
+#colorMap {
+    background-image: url("../img/colormap.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    height: 100%;
+    width: 100%;
 }
 
 /* TEXT */

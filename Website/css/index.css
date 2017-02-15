@@ -10,6 +10,7 @@ body {
     left: 2em;
     font-size: 2em;
     font-weight: bold;
+	cursor: pointer;
 }
 #cpIcon {
     background-image: url('../48.png');
@@ -19,6 +20,9 @@ body {
     display: inline-block;
     position: relative;
     top: .25em;
+}
+.cpLetter {
+	margin-right: -.25em;
 }
 #mainContent {
     position: relative;

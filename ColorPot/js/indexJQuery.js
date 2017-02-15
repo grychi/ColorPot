@@ -4,79 +4,98 @@ var adjView = false;
 var palView = false;
 var harView = 0;
 
-function updateColorView() {
-    if (colorView) {
-        $("#resMI").html("bubble_chart");
-    }
-    else {
-        $("#resMI").html("view_stream");
-    }
-}
-function updatePickerView() {
-    if (pickerView) {
-        return;
-    }
-    else {
-        return;
-    }
-}
-function updateAdjView() {
-    //$("#adj").removeClass("transform-panel-active");
-    if (adjView) {
-        $("#adjMI").html("expand_less");
-        $("#adj").addClass("transform-panel-expand")
-    }
-    else {
-        $("#adjMI").html("expand_more");
-        $("#adj").removeClass("transform-panel-expand")
-    }
-};
-function updatePalView() {
-    $("#pal").removeClass("transform-panel-active");
-    if (palView) {
-        $("#palMI").html("expand_less");
-        $("#pal").addClass("transform-panel-expand");
-    }
-    else {
-        $("#palMI").html("expand_more");
-        $("#pal").removeClass("transform-panel-expand");
-    }
+function updateAllViews() {
+	updateColorView();
+	updatePickerView();
+	updateAdjView();
+	updatePalView();
+	updateHarView();
 };
 
+function updateColorView() {
+	if (colorView) {
+		$("#resMI").html("bubble_chart");
+	}
+	else {
+		$("#resMI").html("view_stream");
+	}
+};
+function updatePickerView() {
+	if (pickerView) {
+		$("#boxView").css("display", "none");
+		$("#mapView").css("display", "block");
+	}
+	else {
+		$("#boxView").css("display", "block");
+		$("#mapView").css("display", "none");
+	}
+};
+function updateAdjView() {
+	//$("#adj").removeClass("transform-panel-active");
+	if (adjView) {
+		$("#adjMI").html("expand_less");
+		$("#adj").addClass("transform-panel-expand")
+	}
+	else {
+		$("#adjMI").html("expand_more");
+		$("#adj").removeClass("transform-panel-expand")
+	}
+};
+function updatePalView() {
+	$("#pal").removeClass("transform-panel-active");
+	if (palView) {
+		$("#palMI").html("expand_less");
+		$("#pal").addClass("transform-panel-expand");
+	}
+	else {
+		$("#palMI").html("expand_more");
+		$("#pal").removeClass("transform-panel-expand");
+	}
+};
+
+function updateHarView() {
+	return;
+}
+
 $(document).ready(function () {
-    $(".material-icons").click(function (event) {
-        event.stopPropagation();
-    });
-    $("#adjMI").click(function () {
-        adjView = !adjView;
-        updateAdjView();
-    });
-    $("#palMI").click(function () {
-        palView = !palView;
-        updatePalView();
-    });
-    $("#resMI").click(function () {
-        colorView = !colorView;
-        updateColorView();
-    });
-    $("#pickMI").click(function () {
-        pickerView = !pickerView;
-        updatePickerView();
-    });
-    $(".rotate").click(function () {
-        if (this.id == "opt") {
-            $("#slideOpt").toggleClass("transform-slideIn-active");
-        }
-        else {
-            $("#slideAbt").toggleClass("transform-slideIn-active");
-        }
-    });
-    $(".closeSlideIn").click(function () {
-        $(".slideIn").removeClass("transform-slideIn-active");
-    });
-    $(".transform-panel").click(function () {
-        $(this).parent().closest('div').toggleClass("transform-panel-active");
-    });
+	updateAllViews();
+	$(".material-icons").click(function (event) {
+		event.stopPropagation();
+	});
+	$("#adjMI").click(function () {
+		adjView = !adjView;
+		updateAdjView();
+	});
+	$("#palMI").click(function () {
+		palView = !palView;
+		updatePalView();
+	});
+	$("#resMI").click(function () {
+		colorView = !colorView;
+		updateColorView();
+	});
+	$("#pickMI").click(function () {
+		pickerView = !pickerView;
+		updatePickerView();
+	});
+	$("#harView").click(function () {
+		harView += 1;
+		updateHarView();
+	});
+	$(".rotate").click(function () {
+		if (this.id == "opt") {
+			$("#slideOpt").toggleClass("transform-slideIn-active");
+		}
+		else {
+			$("#slideAbt").toggleClass("transform-slideIn-active");
+		}
+	});
+	$(".closeSlideIn").click(function () {
+		$(".slideIn").removeClass("transform-slideIn-active");
+	});
+	$(".transform-panel").click(function () {
+		$(this).parent().closest('div').toggleClass("transform-panel-active");
+	});
 });
 
 /*

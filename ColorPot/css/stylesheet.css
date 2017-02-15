@@ -115,6 +115,35 @@ h1 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
+#pickers, #harBox {
+    position: relative;
+    margin: auto;
+    height: 34vh;
+    min-height: 16em;
+    width: calc(34vh + 4em);
+    min-width: 20em;
+    max-width: 20vw;
+    max-height: 20vw;
+    margin-top: 1.5em;
+}
+#boxPicker, #colorWheel {
+    position: relative;
+    height: 34vh;
+    width: 34vh;
+    min-height: 16em;
+    min-width: 16em;
+    max-height: 20vw;
+    max-width: 20vw;
+}
+#boxPickerBar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2em;
+    height: 100%;
+    background: linear-gradient(to bottom, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
+}
+
 /* ADJUSTMENTS */
 
 #adjWrap {
@@ -183,18 +212,19 @@ h1 {
     left: 0;
     bottom: 0;
 }
+.palC {
+    cursor: pointer;
+    float: left;
+    height: 4em;
+}
 
 /* HARMONIES */
-
 #colorWheel {
     background-image: url("../img/conic.png");
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
+
     /*border: solid;
     border-width: .5em;
     border-color: white;/*
@@ -205,8 +235,14 @@ h1 {
     border-radius: 50%;
     position: absolute;
     top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 26vh;
+    width: 26vh;
+    min-height: 12em;
+    min-width: 12em;
+    max-height: 16vw;
+    max-width: 16vw;
     /*border: solid;
     border-width: .5em;
     border-color: white;*/
@@ -295,6 +331,29 @@ input:focus,textarea:focus {
 }
 .slideCont a:hover {
     color: gray !important;
+}
+#colorPotIcon {
+    position: absolute;
+    background-image: url("../icons/ico.png");
+    background-size: cover;
+    height: 4em;
+    width: 4em;
+    transform: translate(16em, -3em);
+}
+
+/* FEEDBACK */
+
+#feedback {
+    overflow: hidden;
+    position: fixed;
+    height: 80%;
+    width: 80%;
+    top: 10%;
+    left: 10%;
+    color: black;
+    background-color: #F2F2F2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    display: none;
 }
 
 /* ANIMATION */
