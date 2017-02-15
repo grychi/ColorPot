@@ -1,4 +1,5 @@
 STATUS (as of Feb 14, 2017)
+    
     User interface layout almost complete, main work left is functionality.
 
     Since this project just started, there are plenty of easy stuff to do!
@@ -52,7 +53,10 @@ CHANGE LOG:
 Feb 9, 2017 Started project
 
 Helpful stuff:
-http://www.w3schools.com/colors/colors_converter.asp
-https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool
-http://htmlcolorcodes.com/color-picker/
-http://www.tigercolor.com/color-lab/color-theory/color-harmonies.htm
+    http://www.w3schools.com/colors/colors_converter.asp
+
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool
+
+    http://htmlcolorcodes.com/color-picker/
+
+    http://www.tigercolor.com/color-lab/color-theory/color-harmonies.htm
