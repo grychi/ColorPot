@@ -311,7 +311,7 @@ input:focus,textarea:focus {
     overflow: hidden;
     position: fixed;
     height: 100%;
-    width: calc(99% - 18em);
+    width: calc(99% - 18em + 2px);
     top: 0;
     left: calc(-99% + 18em);
     background-color: #F2F2F2;
@@ -348,8 +348,10 @@ input:focus,textarea:focus {
     position: fixed;
     height: 80%;
     width: 80%;
-    top: 10%;
-    left: 10%;
+    max-width: 40em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: black;
     background-color: #F2F2F2;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
