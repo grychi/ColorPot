@@ -15,9 +15,9 @@
 
 /* TEXT */
 
-input,textarea {
+input[type=textarea],textarea {
     border-bottom-color: rgba(103, 58, 183, .4);
 }
-input:focus,textarea:focus {
+input[type=textarea]:focus,textarea:focus {
     border-bottom-color: rebeccapurple;
 }
