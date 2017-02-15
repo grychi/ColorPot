@@ -122,3 +122,11 @@ function moveCircle(e) {
     el.style.left = newX + "%";
     el.style.top = newY + "%";
 }
+
+function showFeedb () {
+    document.getElementById("feedback").style.display = "block";
+}
+
+function closeFeedb() {
+    document.getElementById("feedback").style.display = "none";
+}
