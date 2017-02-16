@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* GENERAL */
 
 body {
@@ -6,7 +8,7 @@ body {
     padding: 0;
     margin: 0;
 }
-.material-icons {
+h1 .material-icons {
     float: right;
     margin-right: 1.5em;
     margin-top: -.5em;
@@ -15,8 +17,11 @@ body {
     padding: .5em;
     background-color: rgba(0,0,0,.1);
 }
-.material-icons:hover {
+h1 .material-icons:hover {
     background-color: rgba(0,0,0,.2);
+}
+input, input:focus, textarea:focus {
+    outline: none;
 }
 h1 {
     font-size: 1.5em;
@@ -304,7 +309,6 @@ input[type=textarea],textarea {
     border-bottom-style: solid;
 }
 input[type=textarea]:focus,textarea:focus {
-    outline:none;
     border-bottom: 4px;
     border-bottom-style: solid;
 }
@@ -326,7 +330,7 @@ input[type=textarea]:focus,textarea:focus {
     background-color: #F2F2F2;
 }
 .slideCont {
-    margin: 10% auto;
+    margin: 5vh auto;
     color: black;
     font-size: 1.2em;
     width: 22em;
@@ -371,16 +375,13 @@ input[type=range] {
     width: 100%;
     background: transparent;
 }
-input[type=range]:focus,textarea:focus {
-    outline:none;
-}
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: none;
     height: 1.5em;
     width: 1.5em;
     border-radius: 1em;
-    background: rebeccapurple;
+    background: #673ab7;
     cursor: pointer;
     margin-top: -.5em;
 }
