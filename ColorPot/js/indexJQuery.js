@@ -10,14 +10,19 @@ function updateAllViews() {
 	updateAdjView();
 	updatePalView();
 	updateHarView();
+	optViewReset();
 };
 
 function updateColorView() {
 	if (colorView) {
 		$("#resMI").html("bubble_chart");
+		$(".aColor").addClass("bColor");
+		$(".bColor").removeClass("aColor");
 	}
 	else {
 		$("#resMI").html("view_stream");
+		$(".bColor").addClass("aColor");
+		$(".aColor").removeClass("bColor");
 	}
 };
 function updatePickerView() {
@@ -57,8 +62,21 @@ function updateHarView() {
 	return;
 }
 
+function optViewReset() {
+	$("#headGen").removeClass("headActive");
+	$("#headAdv").removeClass("headActive");
+	$("#headAcc").removeClass("headActive");
+	$("#optGen").css("display", "none");
+	$("#optAdv").css("display", "none");
+	$("#optAcc").css("display", "none");
+}
+
 $(document).ready(function () {
 	updateAllViews();
+
+	$("#headGen").addClass("headActive");
+	$("#optGen").css("display", "block");
+
 	$(".material-icons").click(function (event) {
 		event.stopPropagation();
 	});
@@ -95,6 +113,19 @@ $(document).ready(function () {
 	});
 	$(".transform-panel").click(function () {
 		$(this).parent().closest('div').toggleClass("transform-panel-active");
+	});
+	$(".optHeadClick").click(function () {
+		optViewReset();
+		$(this).addClass("headActive");
+		if (this.id == "headGen") {
+			$("#optGen").css("display", "block");
+		}
+		else if (this.id == "headAdv") {
+			$("#optAdv").css("display", "block");
+		}
+		else {
+			$("#optAcc").css("display", "block");
+		}
 	});
 });
 

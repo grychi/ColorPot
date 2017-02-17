@@ -144,41 +144,70 @@
     </h1>
     <div class="slideCont">
       <div id="optHead">
-        <b class="headActive">General</b>
-        <b>Advanced</b>
-        <b>Account</b>
+        <b id="headGen" class="optHeadClick">General</b>
+        <b id="headAdv" class="optHeadClick">Advanced</b>
+        <b id="headAcc" class="optHeadClick">Account</b>
       </div>
+
       <div id="optGen">
-        Color Format:
-        <div class="mChoose"> <input id="col1" type="radio" name="choose-col" checked="checked"> <label class="rLabel" for="col1"> HEX </label></div>
-        <div class="mChoose"> <input id="col2" type="radio" name="choose-col"> <label class="rLabel" for="col2"> RGB </label></div>
-        <div class="mChoose"> <input id="col3" type="radio" name="choose-col"> <label class="rLabel" for="col3"> HSL </label></div>
-        Optimal Resolution:
-        <div class="mChoose"> <input id="res1" type="radio" name="choose-res"> <label class="rLabel" for="res1"> 800 x 600 </label></div>
-        <div class="mChoose"> <input id="res2" type="radio" name="choose-res"> <label class="rLabel" for="res2"> 1024 x 576 </label></div>
-        <div class="mChoose"> <input id="res3" type="radio" name="choose-res"> <label class="rLabel" for="res3"> 1280 x 720 </label></div>
-        <div class="mChoose"> <input id="res4" type="radio" name="choose-res"> <label class="rLabel" for="res4"> 1600 x 900 </label></div>
-        UI Color:
-        <div class="mChoose"> <input id="ui1" type="radio" name="choose-ui" checked="checked"> <label class="rLabel" for="ui1"> Based on selected color </label></div>
-        <div class="mChoose"> <input id="ui2" type="radio" name="choose-ui"> <label class="rLabel" for="ui2"> Fixed color </label></div>
-      </div>
-      <div id="optAdv">
-        When to update:
-        <div class="mChoose"> <input id="up1" type="radio" name="choose-up" checked="checked"> <label class="rLabel" for="up1"> Automatically </label></div>
-        <div class="mChoose"> <input id="up2" type="radio" name="choose-up"> <label class="rLabel" for="up2"> Manually </label></div>
-        Refresh Interval (colors from input):
-        <div class="mChoose"> <input id="int1" type="radio" name="choose-int" checked="checked"> <label class="rLabel" for="int1"> Default (2s) </label></div>
-        <div class="mChoose"> <input id="int2" type="radio" name="choose-int"> <label class="rLabel" for="int2"> Custom </label>
-          <div id="intRange"><input type="range" min=".5" max="5" step=".5" value="2" tabindex="0" /></div>
+        <div class="optCard">
+          Color Format:
+          <div class="mChoose"> <input id="col1" type="radio" name="choose-col" checked="checked"> <label class="rLabel" for="col1"> HEX </label></div>
+          <div class="mChoose"> <input id="col2" type="radio" name="choose-col"> <label class="rLabel" for="col2"> RGB </label></div>
+          <div class="mChoose"> <input id="col3" type="radio" name="choose-col"> <label class="rLabel" for="col3"> HSL </label></div>
         </div>
-        Cookies:
-        <div class="mChoose"> <input id="cook" type="checkbox" name="cookies" checked="checked"> <label class="cLabel" for="cook"> Use cookies to save colors </label></div>
-        <div id="optReset">Reset all to default</div>
+        <div class="optCard">
+          Window Size:
+          <div class="mChoose">
+            <select>
+            <option value="res0"> Current </option>
+            <option value="res1"> 800 x 600 </option>
+            <option value="res2"> 1024 x 576 </option>
+            <option value="res3"> 1280 x 720 </option>
+            <option value="res4"> 1600 x 900 </option>
+          </select>
+          </div>
+        </div>
+        <div class="optCard">
+          UI Color:
+          <div class="mChoose"> <input id="ui1" type="radio" name="choose-ui" checked="checked"> <label class="rLabel" for="ui1"> Based on selected color </label></div>
+          <div class="mChoose"> <input id="ui2" type="radio" name="choose-ui"> <label class="rLabel" for="ui2"> Fixed color </label></div>
+        </div>
       </div>
+
+      <div id="optAdv">
+        <div class="optCard">
+          When to update:
+          <div class="mChoose"> <input id="up1" type="radio" name="choose-up" checked="checked"> <label class="rLabel" for="up1"> Automatically </label></div>
+          <div class="mChoose"> <input id="up2" type="radio" name="choose-up"> <label class="rLabel" for="up2"> Manually </label></div>
+        </div>
+        <div class="optCard">
+          Refresh Interval (colors from input):
+          <div class="mChoose"> <input id="int1" type="radio" name="choose-int" checked="checked"> <label class="rLabel" for="int1"> Default </label></div>
+          <div class="mChoose"> <input id="int2" type="radio" name="choose-int"> <label class="rLabel" for="int2"> Custom </label>
+            <div id="intRange"><input type="range" min=".5" max="5" step=".5" value="2" tabindex="0" /></div>
+          </div>
+          <div class="mChoose"> <input id="int3" type="radio" name="choose-int"> <label class="rLabel" for="int3"> Never </label></div>
+        </div>
+        <div class="optCard">
+          Cookies:
+          <div class="mChoose"> <input id="cook" type="checkbox" name="cookies" checked="checked"> <label class="cLabel" for="cook"> Use cookies to save colors </label></div>
+        </div>
+        <div class="optCard">
+          <div id="optReset">Reset all to default</div>
+        </div>
+      </div>
+
       <div id="optAcc">
-        Sign Out
-        <div class="mChoose"> <input id="cloud" type="checkbox" name="cloudSync" checked="checked"> <label class="cLabel" for="cloud"> Cloud sync data </label></div>
-        Update password <i style="color: #607D8B;" class="material-icons">open_in_new</i>
+        <div class="optCard">
+          Sign Out
+        </div>
+        <div class="optCard">
+          <div class="mChoose"> <input id="cloud" type="checkbox" name="cloudSync" checked="checked"> <label class="cLabel" for="cloud"> Cloud sync data </label></div>
+        </div>
+        <div class="optCard">
+          Update password <i style="color: #607D8B;" class="material-icons">open_in_new</i>
+        </div>
       </div>
     </div>
   </div>
