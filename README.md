@@ -1,3 +1,5 @@
+###ColorPot
+---
 STATUS (as of Feb 16, 2017)
     
     User interface layout almost complete, main work left is functionality.
@@ -52,6 +54,7 @@ Possible/Experimental Features:
 CHANGE LOG:
 
 Feb 9, 2017 Started project
+
 ---
 
 Helpful stuff:
