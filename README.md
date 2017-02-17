@@ -1,4 +1,4 @@
-STATUS (as of Feb 15, 2017)
+STATUS (as of Feb 16, 2017)
     
     User interface layout almost complete, main work left is functionality.
 
@@ -25,6 +25,7 @@ Additional functionality:
 - click to copy color
 - color opacity support
 - rearrange workspace
+- ability to remove colors easily
 
 Desktop functionality:
 - cross platform (built with electron)
@@ -36,8 +37,6 @@ Desktop functionality:
 
 Things to fix currently:
 - this README.md (better description/ formatting/ adding screenshots perhaps)
-- color picker (currently doesnt work at all)
-- ability to remove colors
 - better text input to color conversion
 - google font used, download and make offline
 - which license ?
@@ -49,8 +48,11 @@ Possible/Experimental Features:
 - accounts, saving on cloud
 - integration with other apps
 
+---
 CHANGE LOG:
+
 Feb 9, 2017 Started project
+---
 
 Helpful stuff:
 
