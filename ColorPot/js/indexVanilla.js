@@ -123,7 +123,7 @@ function moveCircle(e) {
     el.style.top = newY + "%";
 }
 
-function showFeedb () {
+function showFeedb() {
     document.getElementById("feedback").style.display = "block";
 }
 
