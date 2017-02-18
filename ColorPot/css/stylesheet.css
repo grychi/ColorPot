@@ -126,7 +126,7 @@ h1 {
     min-height: 16em;
     width: calc(34vh + 4em);
     min-width: 20em;
-    max-width: 20vw;
+    max-width: calc(20vw + 4em);
     max-height: 20vw;
     margin-top: 1.5em;
 }
@@ -530,7 +530,12 @@ input[type=range]::-webkit-slider-runnable-track {
     border-radius: .2em;
     border: none;
 }
-
+#fbSent br {
+    line-height: 2em;
+}
+#smile {
+    font-size: 2em;
+}
 /* ANIMATION */
 
 .transform-panel-transition {
