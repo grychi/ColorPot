@@ -1,10 +1,10 @@
 ###ColorPot
 ---
-STATUS (as of Feb 16, 2017)
-    
-    User interface layout almost complete, main work left is functionality.
+STATUS (as of Feb 18, 2017)
 
     Since this project just started, there are plenty of easy stuff to do!
+
+    Currently, needs work on functionality such as manipulating colors.
     
     (Especially if you know HTML/CSS/JS)
 
@@ -53,7 +53,10 @@ Possible/Experimental Features:
 ---
 CHANGE LOG:
 
-Feb 9, 2017 Started project
+| Date | Log |
+|------|-----|
+| Feb 16, 2017 | User interface complete |
+| Feb 9, 2017 | Started project |
 
 ---
 
@@ -66,3 +69,7 @@ Helpful stuff:
     http://htmlcolorcodes.com/color-picker/
 
     http://www.tigercolor.com/color-lab/color-theory/color-harmonies.htm
+
+    https://choosealicense.com/licenses/
+
+    http://codepen.io/Lewitje/pen/zqVaPY
