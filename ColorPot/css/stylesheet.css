@@ -263,7 +263,7 @@ h1 {
     width: 18em;
 }
 #showing {
-    margin: auto;
+    margin: 1em auto;
     width: 93%;
     max-height: calc(55vh - 5em);
     overflow-y: scroll;
@@ -277,22 +277,22 @@ h1 {
     display: inline-block;
     border: none;
     cursor: pointer;
-
     /*border-style: solid;
     border-color: white;
     border-width: 4px;*/
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 .bColor {
-    height: 4em;
+    height: 3em;
     width: 80%;
     margin: .5em auto;
     border-radius: 1em;
     border: none;
     cursor: pointer;
+    text-align: center;
+    line-height: 3;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
-
 input[type=textarea],textarea {
     border: none;
     font: 1em 'Quicksand', sans-serif;

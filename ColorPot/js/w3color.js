@@ -1,4 +1,5 @@
 /* w3color.js ver.1.12 by w3schools.com (Do not remove this line)*/
+/* Modified for ColorPot use*/
 (function () {
   function w3color(color, elmnt) {
     if (!(this instanceof w3color)) { return new w3color(color, elmnt); }
@@ -85,7 +86,7 @@
     },
     lighter: function (n) {
       var x, rgb, color;
-      x = (n / 100 || 0.1);
+      x = (n / 100 || 0.085);
       this.lightness += x;
       if (this.lightness > 1) { this.lightness = 1; }
       rgb = hslToRgb(this.hue, this.sat, this.lightness);
@@ -94,9 +95,45 @@
     },
     darker: function (n) {
       var x, rgb, color;
-      x = (n / 100 || 0.1);
+      x = (n / 100 || 0.085);
       this.lightness -= x;
       if (this.lightness < 0) { this.lightness = 0; }
+      rgb = hslToRgb(this.hue, this.sat, this.lightness);
+      color = colorObject(rgb, this.opacity, this.hue, this.sat);
+      this.attachValues(color);
+    },
+    upSat: function (n) {
+      var x, rgb, color;
+      x = (n / 100 || 0.085);
+      this.sat += x;
+      if (this.sat > 1) { this.sat = 1; }
+      rgb = hslToRgb(this.hue, this.sat, this.lightness);
+      color = colorObject(rgb, this.opacity, this.hue, this.sat);
+      this.attachValues(color);
+    },
+    downSat: function (n) {
+      var x, rgb, color;
+      x = (n / 100 || 0.085);
+      this.sat -= x;
+      if (this.sat < 0) { this.sat = 0; }
+      rgb = hslToRgb(this.hue, this.sat, this.lightness);
+      color = colorObject(rgb, this.opacity, this.hue, this.sat);
+      this.attachValues(color);
+    },
+    upHue: function (n) {
+      var x, rgb, color;
+      x = (n || 15);
+      this.hue += x;
+      if (this.hue > 360) { this.hue = 360; }
+      rgb = hslToRgb(this.hue, this.sat, this.lightness);
+      color = colorObject(rgb, this.opacity, this.hue, this.sat);
+      this.attachValues(color);
+    },
+    downHue: function (n) {
+      var x, rgb, color;
+      x = (n || 15);
+      this.hue -= x;
+      if (this.hue < 0) { this.hue = 0; }
       rgb = hslToRgb(this.hue, this.sat, this.lightness);
       color = colorObject(rgb, this.opacity, this.hue, this.sat);
       this.attachValues(color);
@@ -599,14 +636,3 @@
   window.w3color = w3color;
 
 })();
-
-function w3SetColorsByAttribute() {
-  var z, i, att;
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    att = z[i].getAttribute("data-w3-color");
-    if (att) {
-      z[i].style.backgroundColor = w3color(att).toRgbString();
-    }
-  }
-}
