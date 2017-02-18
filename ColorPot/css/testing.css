@@ -53,3 +53,35 @@
 #fbForm input[type=submit]:active {
     background-color: #673ab7;
 }
+
+#fbSent {
+    padding: 2em;
+    font-size: 1em;
+    text-align: center;
+    display: none;
+}
+#heart {
+    margin-top: 2em;
+    position: absolute;
+    width: 6em;
+    left: 50%;
+    transform: translate(-50%, 0) scale(.6);
+}
+#heart:before,
+#heart:after {
+    position: absolute;
+    content: "";
+    left: 3em;
+    top: 0;
+    width: 3em;
+    height: 4.8em;
+    background: #E91E63;
+    border-radius: 3em 3em .5em .5em;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+#heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+}
