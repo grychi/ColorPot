@@ -394,6 +394,12 @@ input[type=textarea]:focus,textarea:focus {
     box-shadow: 0 4px 8px -0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     font-size: 1em;
 }
+.optCard .material-icons {
+    position: absolute;
+    padding-top: .1em;
+    padding-left: .4em;
+    color: #607D8B;
+}
 .mChoose {
     position: relative;
     height: 1.5em;
