@@ -1,6 +1,7 @@
 var upColors = setTimeout(getColors, 0);
 
-var materialColors = ["#f44336",
+var materialColors = [
+    "#f44336",
     "#e91e63",
     "#9c27b0",
     "#673ab7",
@@ -55,7 +56,12 @@ function getColors(e) {
 
 function addColor(someColor) {
     var newColor = document.createElement("div");
-    newColor.className += "aColor";
+    if (colorView) {
+        newColor.className += "bColor";
+    }
+    else {
+        newColor.className += "aColor";
+    }
     newColor.style.backgroundColor = someColor;
     newColor.onclick = colorClick;
     document.getElementById("showing").appendChild(newColor);
@@ -126,7 +132,45 @@ function moveCircle(e) {
 function showFeedb() {
     document.getElementById("feedback").style.display = "block";
 }
-
 function closeFeedb() {
     document.getElementById("feedback").style.display = "none";
 }
+
+function getFormData() {
+    var elements = document.getElementById("fbForm").elements;
+    var fields = Object.keys(elements).map(function(k) {
+        if (elements[k].name !== undefined) {
+            return elements[k].name;
+        }
+    }).filter(function(item, pos, self) {
+        return self.indexOf(item) == pos && item;
+    });
+    var data = {};
+    fields.forEach(function(k) {
+        data[k] = elements[k].value;
+    });
+    console.log(data);
+    return data;
+}
+function handleFormSubmit(event) {
+    event.preventDefault();
+    var data = getFormData();
+    var url = event.target.action;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', url);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        document.getElementById('fbForm').style.display = 'none';
+        document.getElementById('fbSent').style.display = 'block';
+        return;
+    };
+    var encoded = Object.keys(data).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+    }).join('&')
+    xhr.send(encoded);
+}
+function loaded() {
+    var form = document.getElementById('fbForm');
+    form.addEventListener("submit", handleFormSubmit, false);
+};
+document.addEventListener('DOMContentLoaded', loaded, false);
