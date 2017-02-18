@@ -138,15 +138,15 @@ function closeFeedb() {
 
 function getFormData() {
     var elements = document.getElementById("fbForm").elements;
-    var fields = Object.keys(elements).map(function(k) {
+    var fields = Object.keys(elements).map(function (k) {
         if (elements[k].name !== undefined) {
             return elements[k].name;
         }
-    }).filter(function(item, pos, self) {
+    }).filter(function (item, pos, self) {
         return self.indexOf(item) == pos && item;
     });
     var data = {};
-    fields.forEach(function(k) {
+    fields.forEach(function (k) {
         data[k] = elements[k].value;
     });
     console.log(data);
@@ -159,12 +159,12 @@ function handleFormSubmit(event) {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', url);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         document.getElementById('fbForm').style.display = 'none';
         document.getElementById('fbSent').style.display = 'block';
         return;
     };
-    var encoded = Object.keys(data).map(function(k) {
+    var encoded = Object.keys(data).map(function (k) {
         return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
     }).join('&')
     xhr.send(encoded);
