@@ -277,9 +277,6 @@ h1 {
     display: inline-block;
     border: none;
     cursor: pointer;
-    /*border-style: solid;
-    border-color: white;
-    border-width: 4px;*/
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 .bColor {
@@ -292,6 +289,11 @@ h1 {
     /*text-align: center;
     line-height: 3;*/
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+.sColor {
+    border-style: solid;
+    border-color: white;
+    border-width: 4px;
 }
 input[type=textarea],textarea {
     border: none;

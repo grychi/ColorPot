@@ -1,6 +1,6 @@
 var upColors = setTimeout(getColors, 0);
 var allColors = [];
-var currColor;
+var currColor = 0;
 var userInA;
 
 var materialColors = [
@@ -40,12 +40,18 @@ function getColors(e) {
         var userIn = document.getElementById("colorText");
         var userInV = userIn.value;
         userInA = userInV.split("\n");
+        allColors = [];
         userIn.value = "";
         document.getElementById("showing").innerHTML = "";
         for (var i = 0; i < userInA.length; i++) {
             if (userInA[i] != "" && w3color(userInA[i]).valid) {
-                userInA[i] = w3color(userInA[i]).toHexString().toUpperCase();
-                addColor(userInA[i]);
+                var colorTemp = w3color(userInA[i]);
+                allColors.push(colorTemp);
+                userInA[i] = colorTemp.toHexString().toUpperCase();
+                addColor(userInA[i], i);
+            }
+            else {
+                allColors.push(null);
             }
             userIn.value += userInA[i] + "\n";
         }
@@ -57,8 +63,9 @@ function getColors(e) {
     }
 }
 
-function addColor(someColor) {
+function addColor(someColor, colorID) {
     var newColor = document.createElement("div");
+    newColor.id = "showColor" + colorID;
     if (colorView) {
         newColor.className += "bColor";
     }
@@ -68,6 +75,18 @@ function addColor(someColor) {
     newColor.style.backgroundColor = someColor;
     newColor.onclick = colorClick;
     document.getElementById("showing").appendChild(newColor);
+}
+
+function removeColor(colorID = currColor) {
+    if (colorID < userInA.length) {
+        userInA.splice(colorID, 1);
+        var userIn = document.getElementById("colorText");
+        userIn.value = "";
+        for (var i = 0; i < userInA.length; i++) {
+            userIn.value += userInA[i] + "\n";
+        }
+        getColors();
+    }
 }
 
 function randomColor() {
@@ -90,6 +109,7 @@ function setUI(theColor) {
 }
 function colorClick() {
     setUI(this.style.backgroundColor);
+    currColor = parseInt(this.id.substring(9, this.id.length));
 }
 
 function boxMU() {
