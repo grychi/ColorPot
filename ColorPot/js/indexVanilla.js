@@ -1,4 +1,7 @@
 var upColors = setTimeout(getColors, 0);
+var allColors = [];
+var currColor;
+var userInA;
 
 var materialColors = [
     "#f44336",
@@ -36,7 +39,7 @@ function getColors(e) {
     if (e == null || e.keyCode == 13) { // || e.keyCode == 8 || e.keyCode == 46) {
         var userIn = document.getElementById("colorText");
         var userInV = userIn.value;
-        var userInA = userInV.split("\n");
+        userInA = userInV.split("\n");
         userIn.value = "";
         document.getElementById("showing").innerHTML = "";
         for (var i = 0; i < userInA.length; i++) {

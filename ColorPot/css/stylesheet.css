@@ -533,8 +533,9 @@ input[type=range]::-webkit-slider-runnable-track {
 #fbSent br {
     line-height: 2em;
 }
-#smile {
+#thumb {
     font-size: 2em;
+    color: #9e9e9e;
 }
 /* ANIMATION */
 
