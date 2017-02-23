@@ -133,3 +133,15 @@ $(document).ready(function () {
 		}
 	});
 });
+
+function colorClick() {
+	setUI(this.style.backgroundColor);
+	var prevColor = document.getElementById("showColor" + currColor);
+	if (prevColor != null) {
+		prevColor.innerHTML = "";
+	}
+	$(".sColor").removeClass("sColor");
+	currColor = parseInt(this.id.substring(9, this.id.length));
+	this.innerHTML = '<div id="rColor"><i onClick="removeColor()" class="material-icons">delete</i></div>';
+	$(this).addClass("sColor");
+}

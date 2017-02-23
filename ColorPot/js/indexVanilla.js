@@ -86,6 +86,15 @@ function removeColor(colorID = currColor) {
             userIn.value += userInA[i] + "\n";
         }
         getColors();
+        while (currColor < userInA.length && allColors[currColor] == null) {
+            currColor++;
+        }
+        if (currColor == userInA.length) {
+            while (currColor > 0 && allColors[currColor] == null) {
+                currColor--;
+            }
+        }
+        setUI(userInA[currColor]);
     }
 }
 
@@ -106,10 +115,6 @@ function setUI(theColor) {
     for (var i = 0; i < links.length; i++) {
         links[i].style.color = theColor;
     }
-}
-function colorClick() {
-    setUI(this.style.backgroundColor);
-    currColor = parseInt(this.id.substring(9, this.id.length));
 }
 
 function boxMU() {

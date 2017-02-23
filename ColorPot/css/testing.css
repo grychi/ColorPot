@@ -13,53 +13,6 @@
     width: 100%;
 }
 
-#fbForm {
-    padding: 2em;
-}
-#fbForm input{
-    margin: 0 0 1em 0;
-    padding: .5em;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1em;
-    border-bottom: solid;
-    border-bottom-color: rgba(103, 58, 183, .4);
-}
-#fbForm input:active, #fbForm input:focus {
-    border-bottom-color: #673ab7;
-}
-#fbText {
-    padding: .5em;
-    margin: 0 0 1.5em 0;
-    width: calc(100% - 2.5em);
-    height: calc(80vh - 22em);
-}
-#fbForm input[type=submit] {
-    border: none;
-    padding: 1em 4em;
-    color: white;
-    background-color: rgba(103, 58, 183, .8);
-    border-radius: .5em;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,0);
-    box-shadow: 0 4px 8px -0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-}
-#fbForm input[type=submit]:hover {
-    background-color: rgba(103, 58, 183, .9);
-}
-#fbForm input[type=submit]:active {
-    background-color: #673ab7;
-}
-
-#fbSent {
-    padding: 2em;
-    font-size: 1.2em;
-    text-align: center;
-    display: none;
-}
 #heart {
     margin-top: 2em;
     position: absolute;

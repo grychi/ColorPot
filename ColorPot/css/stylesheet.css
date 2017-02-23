@@ -60,6 +60,7 @@ h1 {
     height: 5em;
     text-align: center;
     transform-origin: bottom left;
+    transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
@@ -223,6 +224,7 @@ h1 {
 }
 
 /* HARMONIES */
+
 #colorWheel {
     background-image: url("../img/conic.png");
     background-size: cover;
@@ -294,6 +296,34 @@ h1 {
     border-style: solid;
     border-color: white;
     border-width: 4px;
+    transform: translate(-2px, -2px);
+}
+.aColor.sColor {
+    margin: calc(.5em - 4px) -4px calc(.5em - 4px) calc(1em - 4px);
+}
+#rColor {
+    position: relative;
+    height: 2em;
+    width: 2em;
+    border-radius: 2em;
+    color: #9E9E9E;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+.aColor #rColor {
+    top: 2.2em;
+    left: 1em;
+}
+.bColor #rColor {
+    top: .5em;
+    right: calc(-100% + 2.5em);
+}
+#rColor .material-icons {
+    position: absolute;
+    cursor: pointer;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 input[type=textarea],textarea {
     border: none;
@@ -532,6 +562,53 @@ input[type=range]::-webkit-slider-runnable-track {
     border-radius: .2em;
     border: none;
 }
+#fbForm {
+    padding: 2em;
+}
+#fbForm input{
+    margin: 0 0 1em 0;
+    padding: .5em;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1em;
+    border-bottom: solid;
+    border-bottom-color: rgba(103, 58, 183, .4);
+}
+#fbForm input:active, #fbForm input:focus {
+    border-bottom-color: #673ab7;
+}
+#fbText {
+    padding: .5em;
+    margin: 0 0 1.5em 0;
+    width: calc(100% - 2.5em);
+    height: calc(80vh - 22em);
+}
+#fbForm input[type=submit] {
+    border: none;
+    padding: 1em 4em;
+    color: white;
+    background-color: rgba(103, 58, 183, .8);
+    border-radius: .5em;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    box-shadow: 0 4px 8px -0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+#fbForm input[type=submit]:hover {
+    background-color: rgba(103, 58, 183, .9);
+}
+#fbForm input[type=submit]:active {
+    background-color: #673ab7;
+}
+
+#fbSent {
+    padding: 2em;
+    font-size: 1.2em;
+    text-align: center;
+    display: none;
+}
 #fbSent br {
     line-height: 2em;
 }
@@ -539,6 +616,7 @@ input[type=range]::-webkit-slider-runnable-track {
     font-size: 2em;
     color: #9e9e9e;
 }
+
 /* ANIMATION */
 
 .transform-panel-transition {
