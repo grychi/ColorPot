@@ -144,4 +144,11 @@ function colorClick() {
 	currColor = parseInt(this.id.substring(9, this.id.length));
 	this.innerHTML = '<div id="rColor"><i onClick="removeColor()" class="material-icons">delete</i></div>';
 	$(this).addClass("sColor");
+	updateAdj();
+}
+
+function stopProp() {
+	$("#rColor").click(function (event) {
+		event.stopPropagation();
+	});
 }

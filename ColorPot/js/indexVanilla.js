@@ -1,7 +1,7 @@
 var upColors = setTimeout(getColors, 0);
-var allColors = [];
-var currColor = 0;
-var userInA;
+var allColors = []; //Colors Array
+var currColor = 0; //Current color array index
+var userInA; //User Input Array
 
 var materialColors = [
     "#f44336",
@@ -78,6 +78,7 @@ function addColor(someColor, colorID) {
 }
 
 function removeColor(colorID = currColor) {
+    stopProp();
     if (colorID < userInA.length) {
         userInA.splice(colorID, 1);
         var userIn = document.getElementById("colorText");
@@ -94,8 +95,9 @@ function removeColor(colorID = currColor) {
                 currColor--;
             }
         }
-        setUI(userInA[currColor]);
+        setUI(allColors[currColor].toHexString());
     }
+    updateAdj();
 }
 
 function randomColor() {
@@ -155,6 +157,50 @@ function moveCircle(e) {
     el.style.right = "default";
     el.style.left = newX + "%";
     el.style.top = newY + "%";
+}
+
+function updateAdj() {
+    var tint = document.getElementById("adjTint");
+    var shade = document.getElementById("adjShade");
+    var sat = document.getElementById("adjSat");
+    var tone = document.getElementById("adjTone");
+    tint.innerHTML = "";
+    shade.innerHTML = "";
+    sat.innerHTML = "";
+    tone.innerHTML = "";
+    var cTint = w3color(allColors[currColor].toHexString());
+    var cShade = w3color(allColors[currColor].toHexString());
+    var cSat = w3color(allColors[currColor].toHexString());
+    var cTone = w3color(allColors[currColor].toHexString());
+    /*while(cTint.toHexString() != "#FFFFFF") {
+        cTint.lighter();
+        console.log(cTint.toHexString());
+    }*/
+    for (var i = 0; i < 5; i++) {
+        cTint.lighter();
+        var newAdjTint = document.createElement('div');
+        newAdjTint.className += "adjC";
+        newAdjTint.style.backgroundColor = cTint.toHexString();
+        tint.appendChild(newAdjTint);
+
+        cShade.darker();
+        var newAdjShade = document.createElement('div');
+        newAdjShade.className += "adjC";
+        newAdjShade.style.backgroundColor = cShade.toHexString();
+        shade.appendChild(newAdjShade);
+
+        cSat.upSat();
+        var newAdjSat = document.createElement('div');
+        newAdjSat.className += "adjC";
+        newAdjSat.style.backgroundColor = cSat.toHexString();
+        sat.appendChild(newAdjSat);
+
+        cTone.downSat();
+        var newAdjTone = document.createElement('div');
+        newAdjTone.className += "adjC";
+        newAdjTone.style.backgroundColor = cTone.toHexString();
+        tone.appendChild(newAdjTone);
+    }
 }
 
 function showFeedb() {
