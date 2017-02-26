@@ -6,7 +6,7 @@ $('document').ready(function () {
             clearFootText();
         });
     $("#footReleases").hover(function () {
-        $("#footText").html("Releases");
+        $("#footText").html("Downloads");
     },
         function () {
             clearFootText();

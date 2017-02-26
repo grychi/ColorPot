@@ -35,8 +35,8 @@ body {
     /*background-color: rgba(158, 158, 158, 0.10);*/
     background-image: url("../screenshot.png");
     background-size: cover;
-    height: 36vw;
-    width: 64vw;
+    height: 54vw;
+    width: 96vw;
     max-height: 54vh;
     max-width: 96vh;
     margin: auto;
