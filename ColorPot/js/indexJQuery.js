@@ -140,10 +140,8 @@ function colorClick() {
 	if (prevColor != null) {
 		prevColor.innerHTML = "";
 	}
-	$(".sColor").removeClass("sColor");
 	currColor = parseInt(this.id.substring(9, this.id.length));
-	this.innerHTML = '<div id="rColor"><i onClick="removeColor()" class="material-icons">delete</i></div>';
-	$(this).addClass("sColor");
+	sColorUpdate();
 	updateAdj();
 }
 
@@ -151,4 +149,11 @@ function stopProp() {
 	$("#rColor").click(function (event) {
 		event.stopPropagation();
 	});
+}
+
+function sColorUpdate() {
+	$(".sColor").removeClass("sColor");
+	var cColor = document.getElementById("showColor" + currColor);
+	$("#showColor" + currColor).addClass("sColor");
+	cColor.innerHTML = '<div id="rColor"><i onClick="removeColor()" class="material-icons">delete</i></div>';
 }

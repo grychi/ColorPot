@@ -97,6 +97,7 @@ function removeColor(colorID = currColor) {
         }
         setUI(allColors[currColor].toHexString());
     }
+    sColorUpdate();
     updateAdj();
 }
 
