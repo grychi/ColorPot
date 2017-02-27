@@ -102,6 +102,15 @@
       color = colorObject(rgb, this.opacity, this.hue, this.sat);
       this.attachValues(color);
     },
+    toLight: function (n) {
+      var rgb, color;
+      this.lightness = n;
+      if (this.lightness < 0) { this.lightness = 0; }
+      else if (this.lightness > 1) { this.lightness = 1; }
+      rgb = hslToRgb(this.hue, this.sat, this.lightness);
+      color = colorObject(rgb, this.opacity, this.hue, this.sat);
+      this.attachValues(color);
+    },
     upSat: function (n) {
       var x, rgb, color;
       x = (n / 100 || 0.15);
@@ -120,6 +129,15 @@
       color = colorObject(rgb, this.opacity, this.hue, this.sat);
       this.attachValues(color);
     },
+    toSat: function (n) {
+      var rgb, color;
+      this.sat = n;
+      if (this.sat < 0) { this.sat = 0; }
+      else if (this.sat > 1) { this.sat = 1 }
+      rgb = hslToRgb(this.hue, this.sat, this.lightness);
+      color = colorObject(rgb, this.opacity, this.hue, this.sat);
+      this.attachValues(color);
+    },
     upHue: function (n) {
       var x, rgb, color;
       x = (n || 15);
@@ -134,6 +152,15 @@
       x = (n || 15);
       this.hue -= x;
       if (this.hue < 0) { this.hue = 0; }
+      rgb = hslToRgb(this.hue, this.sat, this.lightness);
+      color = colorObject(rgb, this.opacity, this.hue, this.sat);
+      this.attachValues(color);
+    },
+    toHue: function (n) {
+      var rgb, color;
+      this.hue = n;
+      if (this.hue < 0) { this.hue = 0; }
+      else if (this.hue > 360) { this.hue = 360 }
       rgb = hslToRgb(this.hue, this.sat, this.lightness);
       color = colorObject(rgb, this.opacity, this.hue, this.sat);
       this.attachValues(color);
