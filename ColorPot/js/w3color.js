@@ -113,7 +113,7 @@
     },
     upSat: function (n) {
       var x, rgb, color;
-      x = (n / 100 || 0.15);
+      x = (n / 100 || 0.085);
       this.sat += x;
       if (this.sat > 1) { this.sat = 1; }
       rgb = hslToRgb(this.hue, this.sat, this.lightness);
@@ -122,7 +122,7 @@
     },
     downSat: function (n) {
       var x, rgb, color;
-      x = (n / 100 || 0.15);
+      x = (n / 100 || 0.085);
       this.sat -= x;
       if (this.sat < 0) { this.sat = 0; }
       rgb = hslToRgb(this.hue, this.sat, this.lightness);

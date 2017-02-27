@@ -87,6 +87,7 @@ $(document).ready(function () {
 	});
 	$("#adjMI").click(function () {
 		adjView = !adjView;
+		updateAdj(adjView);
 		updateAdjView();
 	});
 	$("#palMI").click(function () {

@@ -160,7 +160,7 @@ function moveCircle(e) {
     el.style.top = newY + "%";
 }
 
-function updateAdj() {
+function updateAdj(expanded = false) {
     var tint = document.getElementById("adjTint");
     var shade = document.getElementById("adjShade");
     var sat = document.getElementById("adjSat");
@@ -173,11 +173,15 @@ function updateAdj() {
     var cShade = w3color(allColors[currColor].toHexString());
     var cSat = w3color(allColors[currColor].toHexString());
     var cTone = w3color(allColors[currColor].toHexString());
-    /*while(cTint.toHexString() != "#FFFFFF") {
-        cTint.lighter();
-        console.log(cTint.toHexString());
-    }*/
-    for (var i = 0; i < 5; i++) {
+    cTint.toLight(.5);
+    cShade.toLight(.5);
+    cSat.toSat(.5);
+    cTone.toSat(.5);
+    var i = 5;
+    if (expanded) {
+        i = 0;
+    }
+    for (; i < 10; i++) {
         cTint.lighter();
         var newAdjTint = document.createElement('div');
         newAdjTint.className += "adjC";
