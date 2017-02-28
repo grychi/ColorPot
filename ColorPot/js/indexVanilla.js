@@ -98,7 +98,7 @@ function removeColor(colorID = currColor) {
         setUI(allColors[currColor].toHexString());
     }
     sColorUpdate();
-    updateAdj();
+    updateAdj(adjView);
 }
 
 function randomColor() {
@@ -136,18 +136,10 @@ function moveCircle(e) {
     var box = document.getElementById("boxPicker");
     var boxBound = box.getBoundingClientRect();
 
-    if (x < boxBound.left) {
-        x = boxBound.left;
-    }
-    if (x > boxBound.right) {
-        x = boxBound.right;
-    }
-    if (y > boxBound.bottom) {
-        y = boxBound.bottom;
-    }
-    if (y < boxBound.top) {
-        y = boxBound.top;
-    }
+    if (x < boxBound.left) { x = boxBound.left; }
+    if (x > boxBound.right) { x = boxBound.right; }
+    if (y > boxBound.bottom) { y = boxBound.bottom; }
+    if (y < boxBound.top) { y = boxBound.top; }
 
     x -= boxBound.left + 12;
     y -= boxBound.top + 12;
@@ -173,38 +165,71 @@ function updateAdj(expanded = false) {
     var cShade = w3color(allColors[currColor].toHexString());
     var cSat = w3color(allColors[currColor].toHexString());
     var cTone = w3color(allColors[currColor].toHexString());
-    cTint.toLight(.5);
-    cShade.toLight(.5);
-    cSat.toSat(.5);
-    cTone.toSat(.5);
-    var i = 5;
-    if (expanded) {
-        i = 0;
+    var adjClass = "adjC";
+    if (!expanded) {
+        cTint.toLight(.5);
+        cShade.toLight(.5);
+        cSat.toSat(.5);
+        cTone.toSat(.5);
+        for (var i = 0; i < 5; i++) {
+            cTint.lighter();
+            var newAdjTint = document.createElement('div');
+            newAdjTint.className += adjClass;
+            newAdjTint.style.backgroundColor = cTint.toHexString();
+            tint.appendChild(newAdjTint);
+
+            cShade.darker();
+            var newAdjShade = document.createElement('div');
+            newAdjShade.className += adjClass;
+            newAdjShade.style.backgroundColor = cShade.toHexString();
+            shade.appendChild(newAdjShade);
+
+            cSat.upSat();
+            var newAdjSat = document.createElement('div');
+            newAdjSat.className += adjClass;
+            newAdjSat.style.backgroundColor = cSat.toHexString();
+            sat.appendChild(newAdjSat);
+
+            cTone.downSat();
+            var newAdjTone = document.createElement('div');
+            newAdjTone.className += adjClass;
+            newAdjTone.style.backgroundColor = cTone.toHexString();
+            tone.appendChild(newAdjTone);
+        }
     }
-    for (; i < 10; i++) {
-        cTint.lighter();
-        var newAdjTint = document.createElement('div');
-        newAdjTint.className += "adjC";
-        newAdjTint.style.backgroundColor = cTint.toHexString();
-        tint.appendChild(newAdjTint);
-
-        cShade.darker();
-        var newAdjShade = document.createElement('div');
-        newAdjShade.className += "adjC";
-        newAdjShade.style.backgroundColor = cShade.toHexString();
-        shade.appendChild(newAdjShade);
-
-        cSat.upSat();
-        var newAdjSat = document.createElement('div');
-        newAdjSat.className += "adjC";
-        newAdjSat.style.backgroundColor = cSat.toHexString();
-        sat.appendChild(newAdjSat);
-
-        cTone.downSat();
-        var newAdjTone = document.createElement('div');
-        newAdjTone.className += "adjC";
-        newAdjTone.style.backgroundColor = cTone.toHexString();
-        tone.appendChild(newAdjTone);
+    else {
+        do {
+            var newAdjTint = document.createElement('div');
+            newAdjTint.className += adjClass;
+            newAdjTint.style.backgroundColor = cTint.toHexString();
+            tint.appendChild(newAdjTint);
+            cTint.lighter();
+        }
+        while (cTint.lightness < 1);
+        do {
+            var newAdjShade = document.createElement('div');
+            newAdjShade.className += adjClass;
+            newAdjShade.style.backgroundColor = cShade.toHexString();
+            shade.appendChild(newAdjShade);
+            cShade.darker();
+        }
+        while (cShade.lightness > 0);
+        do {
+            var newAdjSat = document.createElement('div');
+            newAdjSat.className += adjClass;
+            newAdjSat.style.backgroundColor = cSat.toHexString();
+            sat.appendChild(newAdjSat);
+            cSat.upSat();
+        }
+        while (cSat.sat < 1);
+        do {
+            var newAdjTone = document.createElement('div');
+            newAdjTone.className += adjClass;
+            newAdjTone.style.backgroundColor = cTone.toHexString();
+            tone.appendChild(newAdjTone);
+            cTone.downSat();
+        }
+        while (cTone.sat > 0);
     }
 }
 

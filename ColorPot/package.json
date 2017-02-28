@@ -1,5 +1,5 @@
 {
-  "name": "colorpot",
+  "name": "colorPot",
   "version": "1.0.0",
   "description": "Picking colors made easy",
   "main": "main.js",
@@ -9,7 +9,7 @@
     "Material",
     "Design"
   ],
-  "author": "gbeargary",
+  "author": "therealgary@github",
   "license": "GNU GPLv3",
   "devDependencies": {
     "electron": "^1.4.1"

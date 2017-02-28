@@ -87,7 +87,7 @@ $(document).ready(function () {
 	});
 	$("#adjMI").click(function () {
 		adjView = !adjView;
-		updateAdj(adjView);
+		//updateAdj(adjView);
 		updateAdjView();
 	});
 	$("#palMI").click(function () {
@@ -97,6 +97,9 @@ $(document).ready(function () {
 	$("#resMI").click(function () {
 		colorView = !colorView;
 		updateColorView();
+	});
+	$("#resUn").click(function () {
+		
 	});
 	$("#pickMI").click(function () {
 		pickerView = !pickerView;
@@ -143,7 +146,7 @@ function colorClick() {
 	}
 	currColor = parseInt(this.id.substring(9, this.id.length));
 	sColorUpdate();
-	updateAdj();
+	updateAdj(adjView);
 }
 
 function stopProp() {

@@ -12,6 +12,25 @@
     height: 100%;
     width: 100%;
 }
+#harPick {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2.5em;
+    min-width: 16em;
+    width: 34vh;
+    max-width: 20vw;
+    -webkit-transform: translateX(-2em) rotate(270deg);
+    transform: translateX(-2em) rotate(270deg);
+    transform-origin: top right;
+}
+#harRange {
+    width: 80%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 #heart {
     margin-top: 2em;

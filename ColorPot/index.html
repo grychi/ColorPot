@@ -5,8 +5,8 @@
 <head>
   <title>ColorPot</title>
   <meta charset="utf-8">
-  <link href="css/stylesheet.min.css" type="text/css" rel="stylesheet">
-  <!--<link href="css/stylesheet.css" type="text/css" rel="stylesheet">-->
+  <!--<link href="css/stylesheet.min.css" type="text/css" rel="stylesheet">-->
+  <link href="css/stylesheet.css" type="text/css" rel="stylesheet">
   <link href="css/testing.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -101,6 +101,9 @@
         <div id="colorWheel">
           <div id="colorCenter"></div>
         </div>
+        <div id="harPick">
+          <div id="harRange"><input type="range" min="2" max="6" step="1" value="2" tabindex="0" /></div>
+        </div>
       </div>
 
     </div>
@@ -110,7 +113,7 @@
     <div id="colors">
       <h1>Colors
         <i id="resMI" class="material-icons">view_stream</i>
-        <i class="material-icons">undo</i>
+        <i id="resUn" class="material-icons">undo</i>
       </h1>
       <div id="showing"> </div>
     </div>
