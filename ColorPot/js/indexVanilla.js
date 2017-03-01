@@ -197,7 +197,7 @@ function updateAdj(expanded = false) {
             tone.appendChild(newAdjTone);
         }
     }
-    else {
+    /*else {
         do {
             var newAdjTint = document.createElement('div');
             newAdjTint.className += adjClass;
@@ -230,7 +230,7 @@ function updateAdj(expanded = false) {
             cTone.downSat();
         }
         while (cTone.sat > 0);
-    }
+    }*/
 }
 
 function showFeedb() {
