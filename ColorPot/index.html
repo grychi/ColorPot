@@ -100,7 +100,18 @@
       <div id="harBox">
         <div id="colorWheel">
           <div id="colorCenter"></div>
+
+          <div class="harPickWrap">
+            <div class="harPickCircle"></div>
+          </div>
+          <div class="harPickWrap" style="transform: translate(0, -50%) rotate(120deg)">
+            <div class="harPickCircle"></div>
+          </div>
+          <div class="harPickWrap" style="transform: translate(0, -50%) rotate(240deg)">
+            <div class="harPickCircle"></div>
+          </div>
         </div>
+        
         <div id="harPick">
           <div id="harRange"><input type="range" min="2" max="6" step="1" value="2" tabindex="0" /></div>
         </div>
@@ -130,10 +141,11 @@
       <b style="font-size: 1.8em">ColorPot</b> Version: 1.0<br>
       <div id="colorPotIcon"></div>
       <a href="#">Check for updates</a><br> An elegant and easy-to-use color tool for graphic designers, digital artists,
-      web developers, material design enthusiasts, and anyone who wants to play with colors.<br> Have any suggestions? <a
+      web developers, material design enthusiasts, and anyone who wants to play with colors.<br> Have any suggestions?
+      <a
         onclick="showFeedb()" href="#">Provide feedback here</a>.<br>
-      <a href="https://github.com/therealgary/" target="_blank">therealgary@github</a><br>
-      <span style="font-size: .8em;">
+        <a href="https://github.com/therealgary/" target="_blank">therealgary@github</a><br>
+        <span style="font-size: .8em;">
         License: <a href="#">GNU GPLv3</a><br style="font-size: 1em;">
         <a href="#">Terms of Use</a><br>
       </span>
@@ -224,8 +236,8 @@
       <input type="text" name="cName" placeholder="Name" maxlength="35" autocorrect="off" autocapitalize="off" spellcheck="false"><br>
       <input type="email" name="cEmail" placeholder="E-mail" maxlength="45" autocorrect="off" autocapitalize="off" spellcheck="false"
         required><br>
-        <textarea id="fbText" name="cMessage" placeholder="Let me know what you think" required></textarea><br>
-        <input type="submit" value="submit">
+      <textarea id="fbText" name="cMessage" placeholder="Let me know what you think" required></textarea><br>
+      <input type="submit" value="submit">
     </form>
     <div id="fbSent">
       <b>Thanks!</b><br> Your feedback will be taken into consideration. <br>
