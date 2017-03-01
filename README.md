@@ -1,6 +1,6 @@
 ###ColorPot
 ---
-STATUS (as of Feb 18, 2017)
+STATUS (as of Feb 28, 2017)
 
     Since this project just started, there are plenty of easy stuff to do!
 
@@ -37,26 +37,29 @@ Desktop functionality:
 - save user data (options, colors from previous session)
 - show on tray
 
-Things to fix currently:
-- this README.md (better description/ formatting/ adding screenshots perhaps)
-- better text input to color conversion
-- google font used, download and make offline
-- which license ?
-- eventually package for testing
-
 Possible/Experimental Features:
 - additional add-ons
 - palattes/colors shared by other users
 - accounts, saving on cloud
 - integration with other apps
 
+Things to fix currently:
+- this README.md (better description/ formatting/ adding screenshots perhaps)
+- fix hexagon color selection (front-end)
+- possibly better text input to color conversion
+- download all assets and make offline (fonts, scripts)
+- which license ?
+- eventually package for testing (should be standalone executable without installation)
+
 ---
 CHANGE LOG:
 
 | Date | Log |
 |------|-----|
-| Feb 16, 2017 | User interface complete |
-| Feb 9, 2017 | Started project |
+| Feb 24, 2017 | Added ability to select one color, will be able to select more later |
+| Feb 20, 2017 | Added functions to change brightness, saturation, and hue |
+| Feb 16, 2017 | Front-end almost complete may need adjustment but, beginning work on functionality|
+| Feb 9, 2017 | Started project, uploaded on github |
 
 ---
 
