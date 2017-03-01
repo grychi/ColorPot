@@ -18,7 +18,7 @@ Key functionality:
 - html color picker (box and hexagon)
 - adjustments: tones brightness(tints shades) hues saturation
 - generated palattes based on selected color
-- harmonies (COMPLEMENTARY, TRIADIC, TETRADIC, ANALOGOUS, ANALOGOUS, custom)
+- harmonies (complementary, triadic, tetradic, analogous, analogous, custom)
 - easy import/export of many many colors
 
 Additional functionality:
@@ -36,6 +36,8 @@ Desktop functionality:
 - automatic updates
 - save user data (options, colors from previous session)
 - show on tray
+- eyedropper to get color of anything
+- screenshot (also to get colors/palatte)
 
 Possible/Experimental Features:
 - additional add-ons
