@@ -69,10 +69,4 @@ Helpful stuff:
 
     https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool
 
-    http://htmlcolorcodes.com/color-picker/
-
     http://www.tigercolor.com/color-lab/color-theory/color-harmonies.htm
-
-    https://choosealicense.com/licenses/
-
-    http://codepen.io/Lewitje/pen/zqVaPY
