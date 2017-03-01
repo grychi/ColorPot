@@ -59,6 +59,8 @@ function getColors(e) {
             userIn.value += userInA[i] + "\n";
         }
         userIn.value = userIn.value.substring(0, userIn.value.length - 1);
+
+        sColorUpdate();
         undoable = false;
         updateUndo();
     }
