@@ -4,6 +4,10 @@ var adjView = false;
 var palView = false;
 var harView = false;
 
+var undoable = true;
+var lastEdit;
+var nextEdit;
+
 function updateAllViews() {
 	updateColorView();
 	updatePickerView();
@@ -67,6 +71,15 @@ function updateHarView() {
 	}
 }
 
+function updateUndo() {
+	if (undoable) {
+		$("#resUn").html("redo");
+	}
+	else {
+		$("#resUn").html("undo");
+	}
+}
+
 function optViewReset() {
 	$("#headGen").removeClass("headActive");
 	$("#headAdv").removeClass("headActive");
@@ -99,7 +112,14 @@ $(document).ready(function () {
 		updateColorView();
 	});
 	$("#resUn").click(function () {
-		
+		if (lastEdit) {
+			var tmpU = undoable;
+			var tmpE = nextEdit;
+			setColors(lastEdit);
+			lastEdit = tmpE;
+			undoable = !tmpU;
+			updateUndo();
+		}
 	});
 	$("#pickMI").click(function () {
 		pickerView = !pickerView;

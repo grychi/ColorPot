@@ -36,9 +36,12 @@ function loadFromCookies() {
 }
 
 function getColors(e) {
+    window.clearTimeout(upColors);
     if (e == null || e.keyCode == 13) { // || e.keyCode == 8 || e.keyCode == 46) {
         var userIn = document.getElementById("colorText");
         var userInV = userIn.value;
+        lastEdit = nextEdit;
+        nextEdit = userInV;
         userInA = userInV.split("\n");
         allColors = [];
         userIn.value = "";
@@ -56,11 +59,17 @@ function getColors(e) {
             userIn.value += userInA[i] + "\n";
         }
         userIn.value = userIn.value.substring(0, userIn.value.length - 1);
+        undoable = false;
+        updateUndo();
     }
     else {
-        window.clearTimeout(upColors);
         upColors = window.setTimeout(getColors, 1000);
     }
+}
+function setColors(a) {
+    var userIn = document.getElementById("colorText");
+    userIn.value = a;
+    getColors();
 }
 
 function addColor(someColor, colorID) {
@@ -197,7 +206,8 @@ function updateAdj(expanded = false) {
             tone.appendChild(newAdjTone);
         }
     }
-    /*else {
+    else {
+        //Add animation, fix null
         do {
             var newAdjTint = document.createElement('div');
             newAdjTint.className += adjClass;
@@ -230,7 +240,7 @@ function updateAdj(expanded = false) {
             cTone.downSat();
         }
         while (cTone.sat > 0);
-    }*/
+    }
 }
 
 function showFeedb() {
