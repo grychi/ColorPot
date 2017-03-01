@@ -55,10 +55,12 @@ function updatePalView() {
 	if (palView) {
 		$("#palMI").html("expand_less");
 		$("#pal").addClass("transform-panel-expand");
+		$(".aPal").css("height", "4em");
 	}
 	else {
 		$("#palMI").html("expand_more");
 		$("#pal").removeClass("transform-panel-expand");
+		$(".aPal").css("height", "2.8em");
 	}
 };
 
