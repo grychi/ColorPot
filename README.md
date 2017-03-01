@@ -1,5 +1,11 @@
 ###ColorPot
 ---
+DESCRIPTION:
+
+Built using Electron, ColorPot is an elegant and easy-to-use color tool for UI designers, digital artists, front-end web developers, material design enthusiasts, and anyone who wants to play with colors.
+
+![alt text](https://github.com/therealgary/ColorPot/blob/master/Website/screenshot.png "Current Screenshot")
+---
 STATUS (as of Feb 28, 2017)
 
     Since this project just started, there are plenty of easy stuff to do!
