@@ -103,9 +103,6 @@ h1 {
     border-color: white;*/
     /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);*/
 }
-#boxPicker:active {
-    cursor: default;
-}
 #pickCircle {
     position: absolute;
     top: -.6em;
@@ -139,6 +136,7 @@ h1 {
     min-width: 16em;
     max-height: 20vw;
     max-width: 20vw;
+    cursor: default;
 }
 #boxPickerBar {
     position: absolute;
@@ -147,6 +145,9 @@ h1 {
     width: 2em;
     height: 100%;
     background: linear-gradient(to bottom, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
+}
+#pickBar {
+    cursor: default;
 }
 
 /* ADJUSTMENTS */

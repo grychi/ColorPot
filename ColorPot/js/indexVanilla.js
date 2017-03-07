@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
     setUI(randomColor());
     window.clearTimeout(upColors);
     document.getElementById("boxPicker").addEventListener('mousedown', boxMD, false);
+    document.getElementById("boxPickerBar").addEventListener('mousedown', barMD, false);
+    document.getElementById("colorWheel").addEventListener('mousedown', harMD, false);
 });
 
 function loadFromCookies() {
@@ -59,7 +61,6 @@ function getColors(e) {
             userIn.value += userInA[i] + "\n";
         }
         userIn.value = userIn.value.substring(0, userIn.value.length - 1);
-
         sColorUpdate();
         undoable = false;
         updateUndo();
@@ -98,17 +99,9 @@ function removeColor(colorID = currColor) {
             userIn.value += userInA[i] + "\n";
         }
         getColors();
-        while (currColor < userInA.length && allColors[currColor] == null) {
-            currColor++;
-        }
-        if (currColor == userInA.length) {
-            while (currColor > 0 && allColors[currColor] == null) {
-                currColor--;
-            }
-        }
+        sColorUpdate();
         setUI(allColors[currColor].toHexString());
     }
-    sColorUpdate();
     updateAdj(adjView);
 }
 
@@ -161,6 +154,50 @@ function moveCircle(e) {
     el.style.right = "default";
     el.style.left = newX + "%";
     el.style.top = newY + "%";
+}
+function barMD(e) {
+    moveBar(e);
+    window.addEventListener('mousemove', moveBar, true);
+    window.addEventListener("mouseup", barMU, false);
+}
+function barMU() {
+    window.removeEventListener('mousemove', moveBar, true);
+    window.removeEventListener("mouseup", barMU, false);
+}
+function moveBar(e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    var el = document.getElementById("pickBar");
+    var box = document.getElementById("boxPickerBar");
+    var boxBound = box.getBoundingClientRect();
+
+    if (y > boxBound.bottom) { y = boxBound.bottom; }
+    if (y < boxBound.top) { y = boxBound.top; }
+
+    y -= boxBound.top + 6;
+    var newY = 100 * y / (box.clientHeight);
+
+    el.style.top = newY + "%";
+}
+
+function harMD(e) {
+    moveHar(e);
+    window.addEventListener('mousemove', moveHar, true);
+    window.addEventListener("mouseup", harMU, false);
+}
+function harMU() {
+    window.removeEventListener('mousemove', moveHar, true);
+    window.removeEventListener("mouseup", harMU, false);
+}
+function moveHar(e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    var el = document.getElementById("mainHarPick");
+    var box = document.getElementById("colorWheel");
+    var bW = box.clientWidth / 2;
+    var bH = box.clientHeight / 2;
+    var boxBound = box.getBoundingClientRect();
+    //TODO: finish function get angle etc
 }
 
 function updateAdj(expanded = false) {

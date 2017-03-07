@@ -179,6 +179,14 @@ function stopProp() {
 
 function sColorUpdate() {
 	$(".sColor").removeClass("sColor");
+	while (currColor < userInA.length && allColors[currColor] == null) {
+		currColor++;
+	}
+	if (currColor >= userInA.length) {
+		while (currColor > 0 && allColors[currColor] == null) {
+			currColor--;
+		}
+	}
 	var cColor = document.getElementById("showColor" + currColor);
 	$("#showColor" + currColor).addClass("sColor");
 	cColor.innerHTML = '<div id="rColor"><i onClick="removeColor()" class="material-icons">delete</i></div>';
