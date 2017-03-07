@@ -97,9 +97,7 @@ $(document).ready(function () {
 	$("#headGen").addClass("headActive");
 	$("#optGen").css("display", "block");
 
-	$(".material-icons").click(function (event) {
-		event.stopPropagation();
-	});
+	stopProp();
 	$("#adjMI").click(function () {
 		adjView = !adjView;
 		//updateAdj(adjView);
@@ -172,6 +170,14 @@ function colorClick() {
 }
 
 function stopProp() {
+	$(".material-icons").click(function (event) {
+		event.stopPropagation();
+	});
+	$("#colorCenter").click(function (event) {
+		event.stopPropagation();
+	});
+}
+function stopPropDel() {
 	$("#rColor").click(function (event) {
 		event.stopPropagation();
 	});

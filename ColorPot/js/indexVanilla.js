@@ -90,7 +90,7 @@ function addColor(someColor, colorID) {
 }
 
 function removeColor(colorID = currColor) {
-    stopProp();
+    stopPropDel();
     if (colorID < userInA.length) {
         userInA.splice(colorID, 1);
         var userIn = document.getElementById("colorText");
@@ -197,7 +197,11 @@ function moveHar(e) {
     var bW = box.clientWidth / 2;
     var bH = box.clientHeight / 2;
     var boxBound = box.getBoundingClientRect();
-    //TODO: finish function get angle etc
+    var angle = (Math.atan((boxBound.bottom - bW - y) / (boxBound.right - bH - x))) * 180 / (Math.PI);
+    if (x > boxBound.right - bW) {
+        angle += 180;
+    }
+    el.style.transform = "translate(0, -50%) rotate(" + angle + "deg)";
 }
 
 function updateAdj(expanded = false) {
