@@ -1,6 +1,6 @@
-### ColorPot
+# ColorPot
 ---
-DESCRIPTION:
+## Description:
 
 Built using Electron, ColorPot is an elegant and easy-to-use color tool for UI designers, digital artists, front-end web developers, material design enthusiasts, and anyone who wants to play with colors.
 
@@ -10,20 +10,20 @@ STATUS (as of Aug 1, 2017)
 
     Currently, needs work on functionality such as manipulating colors.
 
-Website:
+### Website:
 - basic website
 - slideshow to present features
 - download counter
 - about, releases, terms and privacy pages
 
-Key functionality: 
+### Key functionality: 
 - html color picker (box and hexagon)
 - adjustments: tones brightness(tints shades) hues saturation
 - generated palattes based on selected color
 - harmonies (complementary, triadic, tetradic, analogous, analogous, custom)
 - easy import/export of many many colors
 
-Additional functionality:
+### Additional functionality:
 - responsive design
 - drag and drop colors
 - click to copy color
@@ -31,7 +31,7 @@ Additional functionality:
 - rearrange workspace
 - ability to remove colors easily
 
-Desktop functionality:
+### Desktop functionality:
 - cross platform (built with electron)
 - stay on top
 - key shorcuts: esc, undo, delete, etc.
@@ -41,13 +41,13 @@ Desktop functionality:
 - eyedropper to get color of anything
 - screenshot (also to get colors/palatte)
 
-Possible/Experimental Features:
+### Possible/Experimental Features:
 - additional add-ons
 - palattes/colors shared by other users
 - accounts, saving on cloud
 - integration with other apps
 
-Things to fix currently:
+### Things to fix currently:
 - this README.md (better description/ formatting/ adding screenshots perhaps)
 - fix hexagon color selection (front-end)
 - possibly better text input to color conversion
@@ -56,7 +56,7 @@ Things to fix currently:
 - eventually package for testing (should be standalone executable without installation)
 
 ---
-CHANGE LOG:
+## Change log:
 
 | Date | Log |
 |------|-----|
@@ -67,7 +67,7 @@ CHANGE LOG:
 
 ---
 
-Resources:
+### Resources:
 
     http://www.w3schools.com/colors/colors_converter.asp
 
