@@ -6,13 +6,9 @@ Built using Electron, ColorPot is an elegant and easy-to-use color tool for UI d
 
 ![alt text](https://github.com/therealgary/ColorPot/blob/master/Website/screenshot.png "Current Screenshot")
 ---
-STATUS (as of Feb 28, 2017)
-
-    Since this project just started, there are plenty of easy stuff to do!
+STATUS (as of Aug 1, 2017)
 
     Currently, needs work on functionality such as manipulating colors.
-    
-    (Especially if you know HTML/CSS/JS)
 
 Website:
 - basic website
@@ -71,7 +67,7 @@ CHANGE LOG:
 
 ---
 
-Helpful stuff:
+Resources:
 
     http://www.w3schools.com/colors/colors_converter.asp
 
