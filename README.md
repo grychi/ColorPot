@@ -4,17 +4,11 @@
 
 Built using Electron, ColorPot is an elegant and easy-to-use color tool for UI designers, digital artists, front-end web developers, material design enthusiasts, and anyone who wants to play with colors.
 
-![alt text](https://github.com/therealgary/ColorPot/blob/master/Website/screenshot.png "Current Screenshot")
+![alt text](https://github.com/therealgary/ColorPot/blob/master/Website/docs/screenshot.png "Current Screenshot")
 ---
 STATUS (as of Aug 1, 2017)
 
     Currently, needs work on functionality such as manipulating colors.
-
-### Website:
-- basic website
-- slideshow to present features
-- download counter
-- about, releases, terms and privacy pages
 
 ### Key functionality: 
 - html color picker (box and hexagon)
@@ -46,31 +40,5 @@ STATUS (as of Aug 1, 2017)
 - palattes/colors shared by other users
 - accounts, saving on cloud
 - integration with other apps
+- package to standalone executable (without installation)
 
-### Things to fix currently:
-- this README.md (better description/ formatting/ adding screenshots perhaps)
-- fix hexagon color selection (front-end)
-- possibly better text input to color conversion
-- download all assets and make offline (fonts, scripts)
-- which license ?
-- eventually package for testing (should be standalone executable without installation)
-
----
-## Change log:
-
-| Date | Log |
-|------|-----|
-| Feb 24, 2017 | Added ability to select one color, will be able to select more later |
-| Feb 20, 2017 | Added functions to change brightness, saturation, and hue |
-| Feb 16, 2017 | Front-end almost complete may need adjustment but, beginning work on functionality|
-| Feb 9, 2017 | Started project, uploaded on github |
-
----
-
-### Resources:
-
-    http://www.w3schools.com/colors/colors_converter.asp
-
-    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool
-
-    http://www.tigercolor.com/color-lab/color-theory/color-harmonies.htm
