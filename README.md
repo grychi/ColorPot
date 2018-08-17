@@ -6,9 +6,6 @@ Built using Electron, ColorPot is an elegant and easy-to-use color tool for UI d
 
 ![alt text](https://github.com/therealgary/ColorPot/blob/master/docs/screenshot.png "Current Screenshot")
 ---
-STATUS (as of Aug 1, 2017)
-
-    Currently, needs work on functionality such as manipulating colors.
 
 ### Key functionality: 
 - html color picker (box and hexagon)
@@ -22,8 +19,7 @@ STATUS (as of Aug 1, 2017)
 - drag and drop colors
 - click to copy color
 - color opacity support
-- rearrange workspace
-- ability to remove colors easily
+- rearrangable workspace
 
 ### Desktop functionality:
 - cross platform (built with electron)
@@ -31,14 +27,11 @@ STATUS (as of Aug 1, 2017)
 - key shorcuts: esc, undo, delete, etc.
 - automatic updates
 - save user data (options, colors from previous session)
-- show on tray
 - eyedropper to get color of anything
-- screenshot (also to get colors/palatte)
 
 ### Possible/Experimental Features:
 - additional add-ons
 - palattes/colors shared by other users
-- accounts, saving on cloud
-- integration with other apps
+- accounts, saving colors and settings
 - package to standalone executable (without installation)
 
